@@ -10,3 +10,6 @@ venv/
 
 # Added tox
 .tox
+
+#macos
+**.DS_Store
