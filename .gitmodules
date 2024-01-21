@@ -3,3 +3,6 @@
 	url = https://github.com/gnostr-org/gnostr-py-example.git
 	ignore = dirty
 	depth = shallow
+[submodule "gnostr-aio"]
+	path = aio
+	url = https://github.com/gnostr-org/gnostr-py-example.git
