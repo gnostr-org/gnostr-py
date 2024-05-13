@@ -4,3 +4,7 @@
 	python3 ./setup.py install
 	#pip  install .
 	pipx ensurepath --force
+rust:
+	cd rust && \
+		$(MAKE)
+.PHONY: rust
