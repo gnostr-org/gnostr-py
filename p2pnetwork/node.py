@@ -117,7 +117,7 @@ class Node(threading.Thread):
         """ Send a message to all the nodes that are connected with this node. data is a python variable which is
             converted to JSON that is send over to the other node. exclude list gives all the nodes to which this
             data should not be sent.
-            TODO: When sending was not successfull, the user is not notified."""
+            TODO: When sending was not successful, the user is not notified."""
         self.message_count_send = self.message_count_send + 1
         for n in self.nodes_inbound:
             if n in exclude:
@@ -263,7 +263,7 @@ class Node(threading.Thread):
                 if len(self.nodes_inbound) < self.max_connections:
                     
                     # Basic information exchange (not secure) of the id's of the nodes!
-                    connected_node_port = client_address[1] # backward compatibilty
+                    connected_node_port = client_address[1] # backward compatibility
                     connected_node_id   = connection.recv(4096).decode('utf-8')
                     if ":" in connected_node_id:
                         # When a node is connected, it sends its id!
@@ -311,7 +311,7 @@ class Node(threading.Thread):
 
     def outbound_node_connected(self, node):
         """This method is invoked when a connection with a outbound node was 
-           successfull.  The node `self` made the connection."""
+           successful.  The node `self` made the connection."""
         self.debug_print("outbound_node_connected: " + node.id)
         if self.callback is not None:
             self.callback("outbound_node_connected", self, node, {})
@@ -371,7 +371,7 @@ class Node(threading.Thread):
 
     def node_reconnection_error(self, host, port, trials):
         """This method is invoked when a reconnection error occurred. The node connection is disconnected and the
-           flag for reconnection is set to True for this node. This function can be overidden to implement your
+           flag for reconnection is set to True for this node. This function can be overridden to implement your
            specific logic to take action when a lot of trials have been done. If the method returns True, the
            node will try to perform the reconnection. If the method returns False, the node will stop reconnecting
            to this node. The node will forever try to perform the reconnection."""

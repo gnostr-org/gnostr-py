@@ -179,7 +179,7 @@ class TestNode(unittest.TestCase):
         self.assertEqual(step_1_node_1_total_connections, 1, "Node 1 should have one inbound connection.")
         self.assertEqual(step_1_node_1_connection_node, node_0.id + ":127.0.0.1", "Node 1 should be connected (inbound) with node 0.")
 
-        self.assertEqual(step_2_node_2_total_connections, 1, "Node 2 shoud have one outbound connection.")
+        self.assertEqual(step_2_node_2_total_connections, 1, "Node 2 should have one outbound connection.")
         self.assertEqual(step_2_node_2_connection_node, node_0.id + ":127.0.0.1:10000", "Node 2 should be connected (outbound) with node 0.")
         self.assertEqual(step_2_node_0_total_connections, 1, "Node 0 should have one inbound connection.")
         self.assertEqual(step_2_node_0_connection_node, node_2.id + ":127.0.0.1", "Node 0 should be connected (inbound) with node 2.")
@@ -460,7 +460,7 @@ class TestNode(unittest.TestCase):
         node_1.join()
 
         # Perform the asserts!
-        self.assertEqual(node_0.id, "thisisanidtest", "Node 0 shoud have id \"thisisanidtest\"")
+        self.assertEqual(node_0.id, "thisisanidtest", "Node 0 should have id \"thisisanidtest\"")
         self.assertNotEqual(node_1.id, "thisisanidtest", "Node 1 should have a different id than node 0")
         self.assertNotEqual(node_1.id, None, "The ID pf node 1 should not be equal to None")
 

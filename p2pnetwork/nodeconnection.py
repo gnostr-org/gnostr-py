@@ -23,7 +23,7 @@ class NodeConnection(threading.Thread):
        Instantiates a new NodeConnection. Do not forget to start the thread. All TCP/IP communication is handled by this 
        connection.
         main_node: The Node class that received a connection.
-        sock: The socket that is assiociated with the client connection.
+        sock: The socket that is associated with the client connection.
         id: The id of the connected node (at the other side of the TCP/IP connection).
         host: The host/ip of the main node.
         port: The port of the server of the main node."""
@@ -31,7 +31,7 @@ class NodeConnection(threading.Thread):
     def __init__(self, main_node, sock, id, host, port):
         """Instantiates a new NodeConnection. Do not forget to start the thread. All TCP/IP communication is handled by this connection.
             main_node: The Node class that received a connection.
-            sock: The socket that is assiociated with the client connection.
+            sock: The socket that is associated with the client connection.
             id: The id of the connected node (at the other side of the TCP/IP connection).
             host: The host/ip of the main node.
             port: The port of the server of the main node."""
@@ -121,7 +121,7 @@ class NodeConnection(threading.Thread):
            When sending bytes object, it will be using standard socket communication. A end of transmission character 0x04 
            utf-8/ascii will be used to decode the packets ate the other node. When the socket is corrupted the node connection
            is closed. Compression can be enabled by using zlib, bzip2 or lzma. When enabled the data is compressed and send to
-           the client. This could reduce the network bandwith when sending large data chunks.
+           the client. This could reduce the network bandwidth when sending large data chunks.
            """
         if isinstance(data, str):
             try:
@@ -167,14 +167,14 @@ class NodeConnection(threading.Thread):
                 self.stop()  # Stopping node due to failure
 
         else:
-            self.main_node.debug_print('datatype used is not valid plese use str, dict (will be send as json) or bytes')
+            self.main_node.debug_print('datatype used is not valid please use str, dict (will be send as json) or bytes')
 
     def stop(self):
         """Terminates the connection and the thread is stopped. Stop the node client. Please make sure you join the thread."""
         self.terminate_flag.set()
 
     def parse_packet(self, packet):
-        """Parse the packet and determines wheter it has been send in str, json or byte format. It returns
+        """Parse the packet and determines whether it has been send in str, json or byte format. It returns
            the according data."""
         if packet.find(self.COMPR_CHAR) == len(packet) - 1:  # Check if packet was compressed
             packet = self.decompress(packet[0:-1])

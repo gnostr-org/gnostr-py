@@ -4,7 +4,7 @@ This tutorial provides you with a walk through how to use the p2pnetwork framewo
 This example is also available on github: https://github.com/macsnoeren/python-p2p-network-example.git.
 
 ## Should I use this module?
-**If you would like to create peer-to-peer network applications ... the answer is yes!** The module provides you with all the basic details of peer-to-peer network applications. It starts a node that is able to connect to other nodes and is able to receive connections from other nodes. When running a node, you get all the details using an event based structure. When some node is connecting or sending a message, methods are invokes, so you immediatly can react on it. In other words, implementing your application details. 
+**If you would like to create peer-to-peer network applications ... the answer is yes!** The module provides you with all the basic details of peer-to-peer network applications. It starts a node that is able to connect to other nodes and is able to receive connections from other nodes. When running a node, you get all the details using an event based structure. When some node is connecting or sending a message, methods are invokes, so you immediately can react on it. In other words, implementing your application details.
 
 Note that it is a framework that provide the basics of a peer-to-peer network application. The basic idea is not to implement application specifics, so the developer is really in the lead. For example, a peer-to-peer network application implements most likely a discovery function. This function discovers the nodes that form the network. You need to implement this on your own. Meaning that you need to design a protocol and implement it within your class.
 
@@ -128,7 +128,7 @@ while ( command != "stop" ):
     command = input("? ")
 ....
 ````
-When you run the application and connect to another node, you immediatly see the invoked message of the methods in the ````FileSharingNode.py````. Below the console output of the application. When you connect to another node, it will be placed in the outbound list, because it is an outgoing connection. 
+When you run the application and connect to another node, you immediately see the invoked message of the methods in the ````FileSharingNode.py````. Below the console output of the application. When you connect to another node, it will be placed in the outbound list, because it is an outgoing connection.
 ````
 $>file_sharing_node.py 9876
 Initialisation of the Node on port: 9876 on node (ceccce67f62d2d067bca76901ba3da2028539754b451afa81b0ffe2fcc64e070386f5573ee6cf4da9223202d363c3aeb035b360ad5bd95985e1797e93cd93b28)
@@ -143,6 +143,6 @@ $>file_sharing_node.py 9877
 Initialisation of the Node on port: 9877 on node (df643d3c0063b40fcb0c185a9f39e4743551ef426c9acc0355cb01b04288dd87909f7d2ca74d594b266ee6dd149d8e2b3a82c4ee9584382ec4e91230aad1118d)
 ? inbound_node_connected: ceccce67f62d2d067bca76901ba3da2028539754b451afa81b0ffe2fcc64e070386f5573ee6cf4da9223202d363c3aeb035b360ad5bd95985e1797e93cd93b28
 ````
-You already see that you have a lot of control of what happens. Immediatly, you get notified when nodes are connected. Eventually, how nodes are connected is not really important when messages are send to each other.
+You already see that you have a lot of control of what happens. Immediately, you get notified when nodes are connected. Eventually, how nodes are connected is not really important when messages are send to each other.
 
 _work in progress..._
